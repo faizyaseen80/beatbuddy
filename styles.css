@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Lato:ital,wght@1,300&family=Raleway:ital@1&family=Rampart+One&family=Ubuntu&display=swap");
+
+@font-face {
+  font-family: my-font;
+  src: url(pluto.otf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #121212;
+  max-width: 100%;
+  height: 100%;
+}
+
+/* header */
+
+nav {
+  /* display: flex;
+  align-items: center; */
+  background: linear-gradient(180deg, #1c1c1c, #1c1b1b 42.69%, #161616);
+  color: rgba(163, 167, 174, 0.7);
+  height: 65px;
+  width: 100%;
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+ul .brand {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bolder;
+  color: #fff;
+  font-family: my-font;
+}
+
+.active {
+  color: #fff;
+}
+
+ul .brand img {
+  margin: 1em;
+}
+
+nav ul li {
+  display: flex;
+  /* margin: 1.5em; */
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  color: #fff;
+}
+
+#logo {
+  align-items: center;
+  font-size: 22px;
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-family: my-font;
+}
+
+#logo:hover {
+  color: #e9e6e6;
+}
+
+#logo img {
+  margin: 0.2em 1em 0.2em 2em;
+}
+
+@media screen and (max-width: 1277px) {
+  nav {
+    height: 55px;
+  }
+  nav ul li {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 973px) {
+  nav {
+    height: 45px;
+  }
+  nav ul li {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 759px) {
+  nav ul li {
+    font-size: 0.5em;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  nav ul {
+    display: none;
+  }
+  #logo {
+    display: flex;
+  }
+}
+
+/* carousal */
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* max-width: 100vh; */
+  height: 35vh;
+  margin-top: 2em;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.swiper-button-next {
+  color: rgb(0, 0, 0);
+}
+
+.swiper-button-prev {
+  color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 1460px) {
+  #main {
+    height: 25vh;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  #main {
+    height: 15vh;
+  }
+}
+
+/* Artist */
+
+.artist {
+  margin: 3em 5em;
+}
+
+.artist-container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.top-artist {
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.artist-name {
+  color: #fff;
+  font-size: 20px;
+  font-family: "Jost", sans-serif;
+  cursor: pointer;
+}
+
+.artist > .artist-container > .artist-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.artist > .artist-container > .artist-item img {
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 688px) {
+  .artist {
+    display: none;
+  }
+}
+
+/* song items */
+
+.container {
+  margin: 3em 8em 1em 8em;
+}
+
+h2 {
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  margin-bottom: 1em;
+}
+
+.song-container {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.song-item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  cursor: pointer;
+}
+
+.active {
+  color: #e00000;
+}
+
+.song-item > .song-image > img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.song-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.bottom-hover {
+  height: 60%;
+  width: 100%;
+  background: linear-gradient(transparent, black);
+  position: absolute;
+  bottom: -60%;
+  transition: all ease 0.2s;
+}
+
+.song-image:hover .bottom-hover {
+  bottom: 0;
+}
+
+.song-title {
+  font-size: 20px;
+  font-family: "Jost", sans-serif;
+  margin: 12px;
+}
+
+@media screen and (max-width: 460px) {
+  .container {
+    margin: 3em 5em 1em 5em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .song-container {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
+  .container {
+    margin: 3em 3em 1em 3em;
+  }
+}
+
+/* Bottam Bar */
+
+.bottom-bar {
+  background-color: #1c1b1b;
+  width: 100vw;
+  height: 4rem;
+  position: sticky;
+  bottom: 0;
+}
+
+#myProgressBar {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0.7em 0;
+  color: #fff;
+}
+
+.menu .master-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.menu > .song-controller-icons {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.menu > .song-controller-icons > i {
+  cursor: pointer;
+}
+
+#masterPlay {
+  margin: 0 12px;
+}
+
+.menu > .master-play img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 0 12px;
+}
+
+.menu > .master-play span {
+  font-family: "Jost", sans-serif;
+  font-size: 1.1rem;
+}
+
+.menu > .song-timer {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.menu > .song-timer > #current-time {
+  color: rgba(157, 160, 163, 0.8);
+}
+.menu > .song-timer > #total-time {
+  color: rgba(157, 160, 163, 0.8);
+}
+
+@media screen and (max-width: 610px) {
+  .bottom-bar {
+    height: 4.4em;
+  }
+  .menu {
+    padding: 1.4em 0em;
+  }
+  .menu > .song-timer {
+    font-size: 0.7em;
+  }
+
+  .menu > .master-play img {
+    width: 25px;
+    height: 25px;
+    margin: 0 8px;
+  }
+  .menu > .master-play span {
+    font-size: 0.7rem;
+  }
+  .menu .song-controller-icons i {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 369px) {
+  #masterPlay {
+    margin: 0;
+  }
+  #previous,
+  #next {
+    display: none;
+  }
+
+}
+@media screen and (max-width: 353px) {
+  .menu {
+    padding: 1.2em 0em;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .bottom-bar {
+    height: 4.8em;
+  }
+}
