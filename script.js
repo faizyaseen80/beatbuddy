@@ -202,10 +202,12 @@ function formatTime(timeInSeconds) {
 // Play a song by click on master play button
 masterPlay.addEventListener("click", () => {
   if (audioElement.paused || audioElement.currentTime <= 0) {
+    document.getElementById(songIndex).classList.add("active");
     audioElement.play();
     masterPlay.classList.remove("fa-circle-play");
     masterPlay.classList.add("fa-circle-pause");
   } else {
+    document.getElementById(songIndex).classList.add("active");
     audioElement.pause();
     masterPlay.classList.remove("fa-circle-pause");
     masterPlay.classList.add("fa-circle-play");
