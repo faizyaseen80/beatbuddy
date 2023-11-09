@@ -120,7 +120,7 @@ nav ul li:hover {
 
 /* carousal */
 
-#main {
+#carausal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,13 +165,13 @@ nav ul li:hover {
 }
 
 @media screen and (max-width: 1460px) {
-  #main {
+  #carausal {
     height: 25vh;
   }
 }
 
 @media screen and (max-width: 950px) {
-  #main {
+  #carausal {
     height: 15vh;
   }
 }
@@ -403,7 +403,6 @@ h2 {
   #next {
     display: none;
   }
-
 }
 @media screen and (max-width: 353px) {
   .menu {

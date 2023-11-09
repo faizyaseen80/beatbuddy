@@ -222,7 +222,7 @@ audioElement.addEventListener("timeupdate", () => {
   totalTimeDisplay.innerText = formatTime(audioElement.duration);
   if (progress === 100) {
     playSong();
-}
+  }
 });
 
 // change the song time by clicking progress bar
@@ -294,7 +294,7 @@ previous.addEventListener("click", () => {
 function playSong() {
   songIndex++;
   document.getElementById(songIndex).classList.add("active");
-  document.getElementById(songIndex - 1).classList.remove("active")
+  document.getElementById(songIndex - 1).classList.remove("active");
   const songSrc = `songs/${songIndex + 1}.mp3`;
   audioElement.src = songSrc;
   audioElement.currentTime = 0;
